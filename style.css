@@ -1,17 +1,29 @@
+/*
+    Theme Name: Danki Theme
+    Theme URL: https://cursos.dankicode.com
+    Author: Samuel Medeiros
+    Author URL: https://cursos.dankicode.com
+    Description: Tema do curso de Wordpress
+    Version: 1.0
+*/
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: #2b2b2b;
 }
 
 html,body{
     height: 100%;
+    background-color: rgb(239, 239, 239);
 }
 
 li,a{
     text-decoration: none;
-    color: #000;
+    color: #2b2b2b;
     list-style-type: none;
 }
 
@@ -32,21 +44,71 @@ header{
     justify-content: space-between;
 }
 
-ul.menu{
+ul.menuDesktop{
     width: 200px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-ul.menu a{
+ul.menuDesktop a{
     color: rgba(255, 255, 255, 0.473);
     font-weight: normal;
 }
 
-ul.menu a:hover{
+ul.menuDesktop a:hover{
     color: rgb(255, 255, 255);
 }
+
+ul.menuMobile a:hover{
+    color: rgba(255, 255, 255, 0.719);
+}
+
+.menuMobile,.iconHamburger{
+    display: none;
+}
+
+.menuMobile{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background-color: rgba(214, 214, 214, 0.625);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3;
+}
+
+.menuMobile li a{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.menuMobile li{
+    margin: 15px 0; 
+}
+
+.iconHamburger{
+    width: 40px;
+    height: 40px;
+    z-index: 4;
+    position: absolute;
+    right: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    display: none;
+}
+
+.iconHamburger .bar{
+    background-color: white;
+    width: 100%;
+    height: 8px;
+    transition: 1s;
+    border-radius: 5px;
+}
+
 section.header main{
     margin-top: 50px;
     display: flex;
@@ -61,6 +123,7 @@ main .infos, main .ilustra1{
 main .infos h2{
     font-size: 40px;
     letter-spacing: 0px;
+    color: #fff;
 }
 
 main .infos p{
@@ -68,6 +131,7 @@ main .infos p{
     max-width: 300px;
     margin: 25px 0;
     line-height: 25px;
+    color: #fff;
 }
 
 main .ilustra1 img{
@@ -108,6 +172,14 @@ main .ilustra1 img{
 
     .ilustra1{
         max-width: 550px;
+    }
+
+    .menuDesktop{
+        display: none !important;
+    }
+
+    .iconHamburger{
+        display: flex;
     }
 }
 
@@ -164,7 +236,7 @@ section.contribu{
 
 section.contribu .center > h2{
     text-align: center;
-    margin-bottom: 20px;
+    margin: 30px;
     font-weight: normal;
     font-size: 27px;
 }
@@ -187,7 +259,7 @@ section.contribu .boxs{
 }
 
 .box p{
-    color: rgb(130, 130, 130);
+    color: rgb(104, 104, 104);
     line-height: 25px;
 }
 
@@ -198,5 +270,445 @@ section.contribu .boxs{
 
     .box{
         margin: 15px 0;
+    }
+}
+
+
+/* TIME SECTION */
+
+section.timeSection{
+    background-color: #fff;
+    padding: 80px 0;
+    width: 100%;
+    margin: 70px 0 0 0;
+    overflow: hidden;
+}
+
+.timeSection .center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeSection .boxText{
+    width: 45%;    
+    position: relative;
+}
+
+.timeSection .boxText h2{
+    font-size: 27px;
+    font-weight: normal;
+    margin: 30px 0;
+    z-index: 1;
+}
+
+.timeSection .boxText .forma{
+    position: absolute;
+    top: -23px;
+    left: -10px;
+    width: 170px;
+}
+
+.timeSection .boxText p{
+    margin-bottom: 25px;
+    color: rgb(104, 104, 104);
+}
+
+.ilustra2{
+    width: 50%;
+}
+
+.ilustra2 img{
+    width: 100%;
+    max-width: 750px;
+}
+
+@media screen and (max-width: 768px) {
+    section.timeSection{
+        padding-bottom: 0px;
+    }
+
+    .timeSection .center{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -90px;
+    }
+
+    .timeSection .boxText{
+        margin: 0 auto;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .timeSection .boxText h2{
+        font-size: 30px;
+    }
+
+    .timeSection .ilustra2{
+        width: 100%;
+        position: relative;
+        bottom: 65px;
+        left: 110px;
+        z-index: 0;
+    }
+
+    .boxText .forma{
+        display: none;
+    }
+}
+
+
+/* DEPOIMENTOS */
+section.depo{
+    background-color: #250e8a;
+    padding: 100px 0 180px 0;
+}
+
+section.depo .center > h2{
+    color: rgb(242, 242, 242);
+    font-size: 25px;
+    text-align: center;
+    font-weight: normal;
+    margin: 35px 0;
+}
+
+section.depo .boxDepo{
+    width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boxDepo p{
+    color: rgb(242, 242, 242);
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 30px;
+    max-width: 650px;
+}
+
+.boxDepo span{
+    color: rgb(242, 242, 242);
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+
+.boxDepo .boxText{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxDepo .boxText h1{
+    font-size: 60px;
+    font-weight: normal;
+    color: rgb(242, 242, 242);
+    margin: -15px 15px 0 0;
+    font-style: italic;
+}
+
+
+/* BOX METODOLOGIA */
+.boxMeto .center{
+    height: 300px;
+    max-width: 900px;
+    position: relative;
+    top: -150px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 5px 5px 0 0;
+    border-top: 3px solid #ffca00;
+}
+
+.boxMeto{
+    height: 300px;
+}
+
+.boxMeto .center h2{
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.boxMeto .center p{
+    color: rgb(104, 104, 104);
+    max-width: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.boxMeto .center a{
+    padding: 15px 25px;
+    background-color: #250e8a;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+
+/* FOOTER */
+footer .center{
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+}
+
+footer .boxUL{
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+footer ul{
+    margin: 0 30px 20px 0;
+    font-size: 14px;
+}
+
+footer ul li{
+    margin: 15px 0;
+}
+
+footer a{
+    font-size: 12px;
+    color: rgb(104, 104, 104);
+}
+
+footer .logo2{
+    width: 150px;
+    padding: 10px 0;
+}
+
+footer img{
+    width: 100%;
+    max-width: 200px;
+}
+
+@media screen and (max-width: 768px){
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer .center{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boxMeto{
+        height: 200px;
+    }
+
+    .boxMeto p{
+        max-width: 80% !important;
+    }
+
+    footer ul{
+        margin: 0 15px;
+    }
+}
+
+
+
+
+/* PÁGINA SOBRE */
+
+body.sobre section.header{
+    padding: 40px 0 40px 0;
+}
+
+main.equipe .center{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main.equipe .text{
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+main.equipe .text p{
+    font-size: 14px;
+    max-width: 340px;
+    line-height: 30px;
+}
+main.equipe .center h1{
+    font-size: 35px;
+    margin: 25px 0 0 0;
+    max-width: 380px;
+}
+
+main.equipe .imgEquipe img{
+    width: 100%;
+    max-width: 430px;
+    margin: 0 0 50px 0;
+}
+
+@media screen and (max-width: 768px){
+    .imgEquipe{
+        display: none;
+    }
+
+    main.equipe .text p{
+        max-width: 400px;
+    }
+}
+
+
+/* SECTION FOTOS */
+section.fotos{
+    background-color: #fff;
+    padding: 100px 0 250px 0;
+}
+
+section.fotos .boxImages{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boxImages img{
+    width: 100%;
+    margin: 0 10px;
+}
+
+.boxImages img:nth-child(1){
+    margin-left: 0;
+}
+
+@media screen and (max-width: 768px){
+    section.fotos{
+        padding: 50px 0 250px 0;     
+    }
+
+    .boxImages{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .boxImages img{
+        margin: 10px 0 !important;
+    }
+}
+
+
+
+
+/* PÁGINA CONTATO */
+
+section.form{
+    margin-bottom: 60px;
+}
+
+section.form .center{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.boxInfo h1{
+    font-size: 35px;
+    max-width: 300px;
+}
+
+.boxInfo .text{
+    margin: 25px 0 20px 0;
+    max-width: 280px;
+}
+
+.boxInfo .text p{
+    line-height: 27px;
+}
+
+.boxInfo .boxMap{
+    overflow:hidden;
+    padding-bottom:80.25%;
+    position:relative;
+    height:0;
+}
+
+.boxInfo .boxMap iframe{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+}
+
+.form form{
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.form form *{
+    background-color: #fff;
+    color: rgb(181, 181, 181);
+    outline: 1px solid #ccc;
+    border: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+form *::placeholder{
+    color: rgb(181, 181, 181);
+}
+
+select{
+    padding: 12px 6px !important;
+}
+
+textarea{
+    height: 150px;
+}
+
+.form form button{
+    padding: 10px 10px;
+    color: #fff;
+    max-width: 200px;
+    font-weight: 500;
+    align-self: flex-end;
+    background-color: #250e8a;
+}
+
+@media screen and (max-width: 768px){
+    section.form .center{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boxInfo{
+        margin: 0 auto;
+    }
+
+    .boxMap{
+        display: none;
     }
 }
