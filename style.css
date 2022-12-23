@@ -629,7 +629,7 @@ section.form .center{
 
 .boxInfo h1{
     font-size: 35px;
-    max-width: 300px;
+    max-width: 320px;
 }
 
 .boxInfo .text{
@@ -695,6 +695,7 @@ textarea{
     font-weight: 500;
     align-self: flex-end;
     background-color: #250e8a;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px){
